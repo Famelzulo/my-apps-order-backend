@@ -256,4 +256,3 @@ def update_order(
 
 
 handler = Mangum(app)
->>>>>>> e93e7bbaa11b1b659af7c0b504251706b21d431e
