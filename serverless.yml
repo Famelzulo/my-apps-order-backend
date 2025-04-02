@@ -1,0 +1,20 @@
+service: serverless-fastapi
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.10
+  architecture: arm64
+  environment:
+    NODE_ENV: ${env:ENV}
+    DATABASE_URL: ${env:DB_URL}
+
+functions:
+  api:
+    handler: main.handler
+    events:
+      - httpApi: '*'
+
+plugins:
+  - serverless-python-requirements
+  - serverless-dotenv-plugin
